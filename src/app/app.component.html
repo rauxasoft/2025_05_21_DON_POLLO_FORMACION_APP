@@ -5,8 +5,21 @@
             <li><a routerLink="/">Home</a></li>
             <li><a routerLink="/signaldemo">Demo Signal</a></li>
             <li><a routerLink="/familias">Familias</a></li>
+            <li><a routerLink="/login">Login</a></li>
         </ul>
     </nav>
+    @if(nombre){
+        <p>Bienvenido, {{ nombre }}</p>
+        <ul>
+            @for(role of roles; track role) {
+                <li>{{ role }}</li>
+            }
+        </ul>
+    }
+
+    <!-- todo trackear cosas que no tienen id -->
+    <!-- Por qué es necesario ese track AHORA SI Y ANTES NO -->
+    
 </header>
 
 <main>

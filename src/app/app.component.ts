@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { SignalDemoComponent } from './components/signal-demo/signal-demo.component';
-import { ListadoFamiliasComponent } from "./components/listado-familias/listado-familias.component";
+import { userPayLoad } from './core/stores/user.store';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',     
@@ -11,6 +11,28 @@ import { ListadoFamiliasComponent } from "./components/listado-familias/listado-
 })
 export class AppComponent {
  
+  private auth = inject(AuthService);
+
+  nombre:string | null = null;
+  roles:string[] | null = null;
+
+  constructor(){
+
+    // Cómo nos enteramos de que hay un nuevo usuario? 
+
+    effect(() => {
+      const payload = userPayLoad();
+      this.nombre = payload?.nombre ?? null;
+       this.roles = payload?.roles ?? null;
+    });
+
+  }
+
+  logout(){
+    // this.auth.logot();   
+  }
+
+
 }
 
 /**
