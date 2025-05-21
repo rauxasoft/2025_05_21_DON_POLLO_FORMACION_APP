@@ -1,0 +1,7 @@
+<h2>Listado de Pedidos</h2>
+
+@if(pedidos()){
+    <p>{{ pedidos() | json }}<p>
+} @else {
+    <p>No hay pedidos...</p>
+}

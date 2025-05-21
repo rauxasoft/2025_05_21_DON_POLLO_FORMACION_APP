@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { API_BASE_URL } from '../tokens/api-base-url.token';
 import { Observable, tap } from 'rxjs';
 import { setUserPayLoad } from '../core/stores/user.store';
+import { setToken } from '../core/stores/auth.store';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class AuthService {
    return this.http.post(`${this.baseURL}/donpollo/auth/signin`, { username, password }).pipe(
     tap((response:any) => {
 
-      //setToken(response.token);
+      setToken(response.token);
 
       const payloadBase64 = response.token.split('.')[1];
       const payloadDecoded = this.decodeBase64_UTF_8(payloadBase64);
