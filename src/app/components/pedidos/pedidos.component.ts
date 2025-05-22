@@ -3,9 +3,9 @@ import { PedidoDTO1 } from '../../model/pedido-dto1';
 import { PedidoService } from '../../services/pedido.service';
 import { JsonPipe } from '@angular/common';
 
-// Podríamos traernos el modulo con todas las pipes a nivel de root (traer todo lo básico)
-// Va en detrimento de algo incorporar a través de un modulo todos los pipes
-// Aplica también al RoterLink 
+// A partir de Angular 15 algunos pipes built-in como 'json' dejaron de estar disponibles de forma global.
+// Ahora se deben importar explícitamente desde '@angular/common' en componentes standalone. 
+// No forman parte del entorno base por defecto.
 
 @Component({
   selector: 'app-pedidos',

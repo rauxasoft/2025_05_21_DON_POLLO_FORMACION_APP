@@ -18,8 +18,6 @@ export class AppComponent {
 
   constructor(){
 
-    // Cómo nos enteramos de que hay un nuevo usuario? 
-
     effect(() => {
       const payload = userPayLoad();
       this.nombre = payload?.nombre ?? null;
@@ -31,8 +29,7 @@ export class AppComponent {
   logout(){
     // this.auth.logot();   
   }
-
-
+  
 }
 
 /**
@@ -72,8 +69,8 @@ export class AppComponent {
  *    - Ejemplo:
  *      @switch (estado) {
  *        @case ('cargando') { <p>Cargando...</p> }
- *        @case ('error')   { <p>Ha ocurrido un error</p> }
- *        @default          { <p>Todo correcto</p> }
+ *        @case ('error')    { <p>Ha ocurrido un error</p> }
+ *        @default           { <p>Todo correcto</p> }
  *      }
  * 
  * 4. @defer

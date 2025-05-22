@@ -3,9 +3,9 @@
 @if(familias()){
     
     <ul>
-        @for(familia of familias(); track familia.id){
-            <li>{{familia.id}}: {{familia.nombre}} </li>
-        }
+    @for(familia of familias(); track familia.id){
+        <li>{{familia.id}}: {{familia.nombre}} </li>
+    }
     </ul>
 
 } @else {
@@ -15,3 +15,32 @@
 @if(error()){
     <p>{{ error() }}</p>
 }
+
+<!--
+La directiva @for utiliza 'track' para mejorar el rendimiento (igual que 'trackBy' en *ngFor)
+Esto evita que Angular destruya y recree elementos innecesariamente.
+
+¿Qué pasa si la colección no tiene un identificador único?
+
+─────────────────────────────────────────────────────────────
+▸ Opción 1: Usar el índice de la lista
+  @for (item of items(); track $index) { ... }
+  ✔ Fácil de usar
+  ✘ Si el orden cambia, Angular recrea nodos innecesarios.
+
+─────────────────────────────────────────────────────────────
+▸ Opción 2: Usar una función de tracking personalizada
+  function trackPorContenido(index: number, item: any): string {
+    return JSON.stringify(item);
+  }
+  @for (item of items(); track trackPorContenido) { ... }
+  ✔ Permite controlar cómo identificar los elementos
+  ✘ Costosa si los objetos son grandes o si cambian frecuentemente.
+
+─────────────────────────────────────────────────────────────
+▸ Recomendación:
+  Siempre que sea posible, añadir un identificador estable a los objetos
+  de la colección. Usar '$index' o funciones personalizadas debe
+  considerarse un plan B.
+-->
+
