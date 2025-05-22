@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { API_BASE_URL } from '../tokens/api-base-url.token';
 import { Observable, tap } from 'rxjs';
 import { setUserPayLoad } from '../core/stores/user.store';
-import { setToken } from '../core/stores/auth.store';
+import { clearToken, setToken } from '../core/stores/auth.store';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,11 @@ export class AuthService {
     })
    );
   
+  }
+
+  logout(){
+    clearToken();
+    setUserPayLoad(null);
   }
 
   decodeBase64_UTF_8(base64: string): string {

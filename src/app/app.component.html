@@ -5,8 +5,17 @@
             <li><a routerLink="/">Home</a></li>
             <li><a routerLink="/signaldemo">Demo Signal</a></li>
             <li><a routerLink="/familias">Familias</a></li>
-            <li><a routerLink="/pedidos">Pedidos</a></li>
-            <li><a routerLink="/login">Login</a></li>
+            @if (roles?.includes('ADMIN')){
+                <li><a routerLink="/pedidos">Pedidos</a></li>
+                <li><a routerLink="/pedidos">Productos</a></li>
+                <li><a routerLink="/pedidos">Dependientes</a></li>
+            }
+
+            @if(nombre){
+                <button (click)="logout()">Cerrar Sesión</button>
+            } @else {
+                <li><a routerLink="/login">Login</a></li>
+            }
         </ul>
     </nav>
     @if(nombre){
