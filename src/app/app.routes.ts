@@ -3,12 +3,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ResourceDemoComponent } from './pages/resource-demo/resource-demo.component';
 import { SignalDemoComponent } from './pages/signal-demo/signal-demo.component';
+import { PadreDelPesadoComponent } from './pages/padre-del-pesado/padre-del-pesado.component';
 
 export const routes: Routes = [
 
     {   path: '', component: HomeComponent },
     {   path: 'resource-demo', component: ResourceDemoComponent },
     {   path: 'signal-demo', component: SignalDemoComponent },
+    {   path: 'defer-demo', component: PadreDelPesadoComponent },
 
     {
         path: 'familias',

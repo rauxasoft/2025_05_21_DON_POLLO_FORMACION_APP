@@ -1,13 +1,24 @@
 <h2>Familias</h2>
 
 @if(familias()){
-    <ul>
-        @for(familia of familias(); track familia.id){
-            <li>{{familia.id}}: {{familia.nombre}}</li>
-        }
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Familia</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(familia of familias(); track familia.id){
+            <tr>
+                <td>{{familia.id}}</td>
+                <td>{{familia.nombre}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
 } @else {
-    <p>No hay familias</p>
+    <p>Esperando familias</p>
 } 
 
 @if(error()){

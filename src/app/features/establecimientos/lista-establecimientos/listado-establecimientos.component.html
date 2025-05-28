@@ -1,13 +1,29 @@
 <h2>Establecimientos</h2>
 
 @if(establecimientos()){
-    <ul>
-        @for(establecimiento of establecimientos(); track establecimiento.nombre){
-            <li>{{establecimiento.nombre}} {{establecimiento.provincia}}</li>
-        }
-    </ul>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Provincia</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(establecimiento of establecimientos(); track establecimiento.nombre){
+            <tr>
+                <td>{{establecimiento.nombre}}</td>
+                <td>{{establecimiento.telefono}}</td>
+                <td>{{establecimiento.provincia}}</td>
+                <td>{{establecimiento.email}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>      
 } @else {
-    <p>No hay establecimientos</p>
+    <p>Cargando establecimientos...</p>
 } 
 
 @if(error()){
