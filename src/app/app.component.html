@@ -1,0 +1,41 @@
+<header>
+  <h1>🐔 App Don Pollo</h1>
+
+  <nav>
+    <ul class="nav-menu">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/resource-demo">Demo resource</a></li>
+      <li><a routerLink="/signal-demo">Demo signal</a></li>
+      <li><a routerLink="/familias">Familias</a></li>
+      
+      @if (roles?.includes('ADMIN')) {
+        <li><a routerLink="/establecimientos">Establecimientos</a></li>
+        <li><a routerLink="/productos">Productos</a></li>
+      }
+      @if (!nombre){
+        <li><a routerLink="/login">Login</a></li>
+      } @else() 
+      {
+        <button (click)="logout()">Cerrar sesión</button>
+      }
+      
+    </ul>
+  </nav>
+
+  <p class="version">Versión {{ appVersion }}</p>
+
+  @if(nombre) {
+    <div class="usuario">
+      <p><strong>Bienvenido, {{ nombre }}!</strong></p>
+      <ul class="roles">
+        @for (role of roles; track role) {
+          <li>{{ role }}</li>
+        }
+      </ul>
+    </div>
+  }
+</header>
+
+<main>
+  <router-outlet />
+</main>

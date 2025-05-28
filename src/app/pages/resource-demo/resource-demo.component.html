@@ -1,0 +1,12 @@
+<h2>Demo de rxResource()</h2>
+@if(familias.hasValue()){
+
+    <ul>
+        @for(familia of familias.value(); track familia.id){
+            <li>{{ familia.nombre }}</li>
+        }
+    </ul>
+
+} @else {
+    {{ familias.status()}}
+}

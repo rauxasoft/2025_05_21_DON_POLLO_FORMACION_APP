@@ -1,0 +1,15 @@
+<h2>Establecimientos</h2>
+
+@if(establecimientos()){
+    <ul>
+        @for(establecimiento of establecimientos(); track establecimiento.nombre){
+            <li>{{establecimiento.nombre}} {{establecimiento.provincia}}</li>
+        }
+    </ul>
+} @else {
+    <p>No hay establecimientos</p>
+} 
+
+@if(error()){
+    <p>Error! Algo pasa....</p>
+}
