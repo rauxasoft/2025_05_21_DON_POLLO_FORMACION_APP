@@ -8,5 +8,13 @@ import { ComponentePesadoComponent } from '../componente-pesado/componente-pesad
   styleUrl: './padre-del-pesado.component.css'
 })
 export class PadreDelPesadoComponent {
-  visible = true;
+  palante = true;
 }
+
+// on viewport    -> ... cuando es visible en la pantalla del usuario
+// on hover       -> ... cuando el usuario pasa el puntero por encima
+// on interaction -> ... cuando el usuario interactua
+// on idle        -> ... cuando el navegador tiene un pequeño momento de asueto o relax
+// on inmediate   -> ... ya!
+
+// when palante   -> ... cuando se cumple la expresión o signal o variable booleana. Cuando el padre quiera

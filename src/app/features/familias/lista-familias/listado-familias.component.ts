@@ -12,6 +12,7 @@ import { FamiliaService } from '../familia.service';
 export class ListadoFamiliasComponent implements OnInit{
 
   private familiaService = inject(FamiliaService);
+  
   public familias = signal<Familia[]>([]);
   public error = signal<string | null>(null);
 

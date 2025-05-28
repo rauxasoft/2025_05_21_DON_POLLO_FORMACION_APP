@@ -4,6 +4,7 @@ import { roleGuard } from "../../core/guards/role.guard";
 import { ListadoFamiliasComponent } from "./lista-familias/listado-familias.component";
 
 export const FAMILIA_ROUTES: Route[] = [
+  
   {
     path: '',
     component: ListadoFamiliasComponent,

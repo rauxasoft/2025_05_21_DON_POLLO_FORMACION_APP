@@ -14,17 +14,17 @@ export const routes: Routes = [
 
     {
         path: 'familias',
-        loadChildren: () => import('./features/familias/familia.routes').then(m => m.FAMILIA_ROUTES)
+        loadChildren: () => import('./features/familias/familia.routes').then(archivo => archivo.FAMILIA_ROUTES)
     },
 
     {
         path: 'establecimientos',
-        loadChildren: () => import('./features/establecimientos/establecimiento.routes').then(m => m.ESTABLECIMIENTO_ROUTES)
+        loadChildren: () => import('./features/establecimientos/establecimiento.routes').then(archivo => archivo.ESTABLECIMIENTO_ROUTES)
     },
 
     {
         path: 'productos',
-        loadChildren: () => import('./features/productos/producto.routes').then(m => m.PRODUCTO_ROUTES)
+        loadChildren: () => import('./features/productos/producto.routes').then(archivo => archivo.PRODUCTO_ROUTES)
     },
 
     { path: 'login', component: LoginComponent },
