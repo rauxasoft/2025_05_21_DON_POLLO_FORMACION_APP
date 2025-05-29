@@ -1,0 +1,32 @@
+<h2>Ofertas</h2>
+
+@if(ofertas.hasValue()){
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre del producto</th>
+                <th>Familia</th>
+                <th>Precio</th>
+                <th>Precio de oferta!</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(oferta of ofertas.value(); track oferta.idProducto){
+                <tr>
+                    <td>{{ oferta.idProducto }}</td>
+                    <td>{{ oferta.nombreProducto }}</td>
+                    <td>{{ oferta.familia }}</td>
+                    <td>{{ oferta.precioAntes }}</td>
+                    <td>{{ oferta.precioOferta }}</td>
+                </tr>
+            }
+        </tbody>
+    </table> 
+} @else {
+    <p>Esperando ofertas...</p>
+} 
+
+@if(ofertas.error()){
+    <p>Error! Algo pasa....</p>
+}

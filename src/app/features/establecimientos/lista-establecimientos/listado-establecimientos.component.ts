@@ -3,17 +3,14 @@ import { EstablecimientoDTO2 } from '../establecimientoDTO2';
 import { EstablecimientoService } from '../establecimiento.service';
 
 @Component({
-  selector: 'app-listado-establecimientos',
-  standalone: true,
-  imports: [],
   templateUrl: './listado-establecimientos.component.html',
   styleUrl: './listado-establecimientos.component.css'
 })
 export class ListadoEstablecimientosComponent implements OnInit{
 
   private establecimeintoService = inject(EstablecimientoService);
-  public establecimientos = signal<EstablecimientoDTO2[]>([]);
-  public error = signal<string | null>(null);
+  establecimientos = signal<EstablecimientoDTO2[]>([]);
+  error = signal<string | null>(null);
 
   ngOnInit() {
     

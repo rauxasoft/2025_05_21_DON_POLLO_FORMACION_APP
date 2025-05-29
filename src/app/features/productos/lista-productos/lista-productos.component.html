@@ -20,7 +20,7 @@
                     <td>{{ producto.fechaAlta | date:'dd/MM/yyyy' }}</td>
                     <td>{{ producto.familia.nombre }}</td>
                     <td>{{ producto.precio }}</td>
-                    <td>{{ producto.descatalogado }}</td>
+                    <td class="descatalogado">{{ producto.descatalogado | descatalogado }} </td>
                 </tr>
             }
         </tbody>

@@ -3,9 +3,6 @@ import { Familia } from '../familia';
 import { FamiliaService } from '../familia.service';
 
 @Component({
-  selector: 'app-listado-familias',
-  standalone: true,
-  imports: [],
   templateUrl: './listado-familias.component.html',
   styleUrl: './listado-familias.component.css'
 })
@@ -13,8 +10,8 @@ export class ListadoFamiliasComponent implements OnInit{
 
   private familiaService = inject(FamiliaService);
   
-  public familias = signal<Familia[]>([]);
-  public error = signal<string | null>(null);
+  familias = signal<Familia[]>([]);
+  error = signal<string | null>(null);
 
   ngOnInit() {
     

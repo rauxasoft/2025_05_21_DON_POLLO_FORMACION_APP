@@ -27,6 +27,12 @@ export const routes: Routes = [
         loadChildren: () => import('./features/productos/producto.routes').then(archivo => archivo.PRODUCTO_ROUTES)
     },
 
+    
+    {
+        path: 'ofertas',
+        loadChildren: () => import('./features/ofertas/oferta.routes').then(archivo => archivo.OFERTA_ROUTES)
+    },
+
     { path: 'login', component: LoginComponent },
     { path: '**', redirectTo: '' }
 ];

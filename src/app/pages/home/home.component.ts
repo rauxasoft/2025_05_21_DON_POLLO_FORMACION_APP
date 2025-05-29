@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  textoDelDia = $localize `Hoy disfrutarás de la oferta tal...`;
+  textoDelDia = $localize `Enjoy our offers!!!...`;
 }
 
 // Ejemplo de como traducir en el codigo
