@@ -19,7 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["en-US"],
+            "localize": ["es-ES"],
             "outputPath": "dist/donpollo_app",
             "index": "src/index.html",
             "browser": "src/main.ts",

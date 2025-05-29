@@ -5,9 +5,11 @@ import { rxResource } from '@angular/core/rxjs-interop';
 import { CronoEngineService } from '@tiruliki/cronoluxe';
 import { POLLING_SPEED } from '../../../tokens/polling-speed.token';
 import { HttpErrorResponse } from '@angular/common/http';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   templateUrl: './lista-ofertas.component.html',
+  imports: [DecimalPipe],
   styleUrl: './lista-ofertas.component.css'
 })
 export class ListaOfertasComponent implements OnInit, OnDestroy {
@@ -20,13 +22,6 @@ export class ListaOfertasComponent implements OnInit, OnDestroy {
     const err = this.ofertas.error() as HttpErrorResponse;
     return err.error.error;
   });
-
-  constructor(){
-    effect(() => {
-      const err = this.ofertas.error() as HttpErrorResponse;
-      console.log(err.error); 
-    });
-  }
 
   ofertas: ResourceRef<Oferta[] | undefined> = rxResource({
     request: () => this.cronoEngine.totalSegundos(),

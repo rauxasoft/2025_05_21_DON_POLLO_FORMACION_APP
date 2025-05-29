@@ -8,7 +8,8 @@
                 <th>Nombre del producto</th>
                 <th>Familia</th>
                 <th>Precio</th>
-                <th>Precio de oferta!</th>
+                <th>Oferta</th>
+                <th>Ahorro</th>
             </tr>
         </thead>
         <tbody>
@@ -17,8 +18,9 @@
                     <td>{{ oferta.idProducto }}</td>
                     <td>{{ oferta.nombreProducto }}</td>
                     <td>{{ oferta.familia }}</td>
-                    <td>{{ oferta.precioAntes }}</td>
-                    <td>{{ oferta.precioOferta }}</td>
+                    <td style="text-align: right;">{{ oferta.precioAntes | number:'1.2-2' }} €</td>
+                    <td style="text-align: right;">{{ oferta.precioOferta | number:'1.2-2' }} €</td>
+                    <td style="text-align: right; color:green;">{{ oferta.precioAntes - oferta.precioOferta | number:'1.2-2' }} €</td>
                 </tr>
             }
         </tbody>

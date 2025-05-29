@@ -4,11 +4,10 @@ import { RouterModule } from '@angular/router';
 import { APP_VERSION } from './tokens/app-version.token';
 import { userPayload } from './core/stores/user.store';
 import { AuthService } from './core/auth/auth.service';
-import { LoTengoTodoComponent } from './lo-tengo-todo/lo-tengo-todo.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterModule, LoTengoTodoComponent],
+  imports: [RouterOutlet, RouterModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

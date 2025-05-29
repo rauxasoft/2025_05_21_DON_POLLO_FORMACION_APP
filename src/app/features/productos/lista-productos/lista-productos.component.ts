@@ -1,11 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { Producto } from '../producto';
 import { ProductoService } from '../producto.service';
-import { DatePipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { DescatalogadoPipe } from '../../../shared/pipes/descatalogado.pipe';
 
 @Component({
-  imports: [DatePipe, DescatalogadoPipe],
+  imports: [DatePipe, DescatalogadoPipe, DecimalPipe],
   templateUrl: './lista-productos.component.html',
   styleUrl: './lista-productos.component.css'
 })
