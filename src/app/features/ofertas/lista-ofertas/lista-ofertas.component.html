@@ -23,10 +23,12 @@
             }
         </tbody>
     </table> 
-} @else {
-    <p>Esperando ofertas...</p>
-} 
+}
 
+@if(ofertas.isLoading()){
+    <p>Esperando ofertas...</p>
+}
+    
 @if(ofertas.error()){
-    <p>Error! Algo pasa....</p>
+    <p style="color:red;">{{ mensajeError() }}</p>
 }

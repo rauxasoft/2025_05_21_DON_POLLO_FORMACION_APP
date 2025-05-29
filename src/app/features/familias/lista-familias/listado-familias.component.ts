@@ -13,7 +13,10 @@ export class ListadoFamiliasComponent implements OnInit{
   familias = signal<Familia[]>([]);
   error = signal<string | null>(null);
 
-  ngOnInit() {
+  // Aquí mantenemos el ejemplo con Signal pero sin xrResouce() 
+  // Esta función todavía está en fase experimental en Angular19!
+
+  ngOnInit(): void {
     
     this.familiaService.getAll().subscribe({
       next: data => {

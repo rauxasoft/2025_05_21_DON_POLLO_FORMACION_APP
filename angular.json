@@ -5,9 +5,9 @@
   "projects": {
     "donpollo_app": {
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": "es-ES",
         "locales":{
-          "es": "src/locale/messages.es.xlf"
+          "en-US": "src/locale/messages.en.xlf"
         }
       },
       "projectType": "application",
@@ -19,7 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": true,
+            "localize": ["en-US"],
             "outputPath": "dist/donpollo_app",
             "index": "src/index.html",
             "browser": "src/main.ts",

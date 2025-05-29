@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  textoDelDia = $localize `Enjoy our offers!!!...`;
+  textoDelDia = $localize `Disfruta de nuestras ofertas!!`;
 }
 
 // Ejemplo de como traducir en el codigo

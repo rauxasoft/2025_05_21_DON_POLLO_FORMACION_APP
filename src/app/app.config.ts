@@ -13,6 +13,6 @@ export const appConfig: ApplicationConfig = {
               provideRouter(routes),
               provideHttpClient(withInterceptors([authInterceptor])),
               { provide: API_BASE_URL, useValue: 'http://localhost:8080' },
-              { provide: POLLING_SPEED, useValue: 7000 },
+              { provide: POLLING_SPEED, useValue: 10000 },
               { provide: APP_VERSION, useValue: '1.0.0'}]
 };
